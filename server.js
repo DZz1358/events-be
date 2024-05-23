@@ -7,6 +7,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
+// const port = 3000;
 // const db = 'mongodb+srv://saloed2206:9hGcy35NGTatFrUy@cluster0.bz6s6ax.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const db = process.env.MONGODB_URI;
 
@@ -15,8 +16,8 @@ app.use(cors());
 
 mongoose
     .connect(db)
-    .then((res) => console.log('connect to DB'))
-    .catch((error) => console.log('error'))
+    .then((res) => console.log('connect to DB', process.env.MONGODB_URI))
+    .catch((error) => console.log('error mongo'))
 
 
 app.get('/events', (req, res) => {
