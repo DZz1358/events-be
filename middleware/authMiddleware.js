@@ -6,11 +6,10 @@ exports.findUserByEmail = (email) => {
     return users.find(user => user.email === email);
 };
 
-exports.createUser = async (email, password) => {
+exports.createUser = async (email, password, name) => {
     // const hashedPassword = await bcrypt.hash(password, 10);
-    const user = { email, password };
+    const user = { email, password, name };
     // const user = { email, password: hashedPassword };
     users.push(user);
-    console.log('users', users);
     return user;
 };
