@@ -29,7 +29,7 @@ app.use(eventRoutes)
 app.use((req, res) => {
   res
     .status(500)
-    .send('<h1>Мимо Брат,мимо</h1>')
+    .send('<h1>Incorrect URL</h1>')
 })
 
 app.listen(port, () => {
